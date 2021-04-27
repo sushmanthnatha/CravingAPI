@@ -34,16 +34,26 @@ namespace CravingAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Userdetail>> GetUserdetail(string id)
         {
-          
 
-           var userdetail = await _context.Userdetails.FindAsync(id);
+            if (id.Contains("@"))
+            { var userdetail1 = _context.Userdetails.Where(e => e.Email == id).ToList();
+                
+                 if (userdetail1.Count == 0)
+                     return NotFound();
+
+
+                 return userdetail1.FirstOrDefault();
+       
+            }
+
+
+             var userdetail = await _context.Userdetails.FindAsync(id);
                 if (userdetail == null)
                 {
                     return NotFound();
                 }
 
                 return userdetail;
-
            
         }
 
@@ -100,7 +110,7 @@ namespace CravingAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok();
         }
 
         // POST: api/Userdetails
