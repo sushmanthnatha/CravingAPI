@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using CravingAPI.Models;
 
 #nullable disable
 
@@ -95,5 +96,7 @@ namespace CravingAPI.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<CravingAPI.Models.Item> Item { get; set; }
     }
 }
