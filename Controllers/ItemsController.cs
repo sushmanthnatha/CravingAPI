@@ -18,6 +18,7 @@ namespace CravingAPI.Controllers
         public ItemsController(cravingContext context)
         {
             _context = context;
+            
         }
 
         // GET: api/Items
@@ -35,6 +36,7 @@ namespace CravingAPI.Controllers
 
             if (item == null)
             {
+                
                 return NotFound();
             }
 
