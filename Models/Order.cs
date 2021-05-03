@@ -1,24 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-
-#nullable disable
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CravingAPI.Models
 {
-    public partial class Order
+    public class Order
     {
-        public Order()
-        {
-            Carts = new HashSet<Cart>();
-        }
-
-        public int Orderid { get; set; }
+        public string Orderid { get; set; }
         public decimal Totprice { get; set; }
         public string Orderstatus { get; set; }
         public DateTime Orddatetime { get; set; }
         public string Userid { get; set; }
-
-        public virtual Userdetail User { get; set; }
-        public virtual ICollection<Cart> Carts { get; set; }
     }
 }

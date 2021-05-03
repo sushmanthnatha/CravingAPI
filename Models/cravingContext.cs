@@ -100,5 +100,7 @@ namespace CravingAPI.Models
         public DbSet<CravingAPI.Models.Item> Item { get; set; }
 
         public DbSet<CravingAPI.Models.Cart> Cart { get; set; }
+
+        public DbSet<CravingAPI.Models.Order> Orders { get; set; }
     }
 }
