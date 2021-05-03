@@ -29,16 +29,17 @@ namespace CravingAPI.Controllers
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(string id)
+        public ActionResult<IEnumerable<Order>> GetOrder(string id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var C = _context.Orders.AsQueryable();
+            C = _context.Orders.Where(e => e.Userid == id);
 
-            if (order == null)
+            if (C == null)
             {
                 return NotFound();
             }
 
-            return order;
+            return C.ToList();
         }
 
         // POST: api/Orders
