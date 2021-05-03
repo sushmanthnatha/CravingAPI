@@ -9,7 +9,7 @@ namespace CravingAPI.Models
     {
         public Item()
         {
-            Carts = new HashSet<Cart>();
+            //Carts = new HashSet<Cart>();
         }
 
         public int Itemid { get; set; }
@@ -20,8 +20,7 @@ namespace CravingAPI.Models
         public string Description { get; set; }
         public bool Veg { get; set; }
         public string Image { get; set; }
-        public double? Ratings { get; set; }
+        public byte? Ratings { get; set; }
 
-        public virtual ICollection<Cart> Carts { get; set; }
     }
 }

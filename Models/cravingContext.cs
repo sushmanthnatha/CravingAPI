@@ -98,5 +98,9 @@ namespace CravingAPI.Models
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
         public DbSet<CravingAPI.Models.Item> Item { get; set; }
+
+        public DbSet<CravingAPI.Models.Cart> Cart { get; set; }
+
+        public DbSet<CravingAPI.Models.Order> Orders { get; set; }
     }
 }

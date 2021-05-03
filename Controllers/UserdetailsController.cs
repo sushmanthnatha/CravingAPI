@@ -41,7 +41,7 @@ namespace CravingAPI.Controllers
                  if (userdetail1.Count == 0)
                      return NotFound();
 
-
+//.l
                  return userdetail1.FirstOrDefault();
        
             }
